@@ -44,3 +44,6 @@ This repository provides a hands-on exploration of various Big Data technologies
 ---
 
 Feel free to explore, modify, and enhance the analyses as per your requirements!
+
+**NOTE:** 
+I will be updating this Readme and the repo regularly until I'm done with all the work I have done

@@ -21,6 +21,13 @@ In today's data-driven world, leveraging Big Data technologies is essential for 
 ### Apache Spark on AWS
 - **Description**: An open-source distributed computing system that provides an interface for programming entire clusters. Spark on AWS EMR supports large-scale data processing and real-time stream processing.
 - **Use Cases**: Iterative algorithms, interactive data analysis, real-time data processing, and big data analytics.
+- **Update: StructuredStremAnalysis.py:**
+
+  The PySpark framework, “StructuredStreamingWindowAggregation” is centered around processing streaming JSON data from a local folder. The data we’re processing represents activity logs with fields such as 'Arrival_Time', 'gt', 'x', 'y', and 'z'. The objective here is to perform time-windowed aggregations on this data, specifically calculating the counts and mean values of 'x', 'y', and 'z', grouped by the 'gt' field, and then offer recommendations based on some conditions.
+  Structured streaming helps to treat live data streams of the activity data JSON files as tables to which incoming data is continuously appended. We apply window operations to group data based on event time windows, these tables are appended to in batches. In this framework implementation, we process the stream for three distinct window durations: 5 minutes, 15 minutes, and 30 minutes. We generate aggregate metrics like counts and mean values for each window, which helps to observe trends over different time intervals, which in turn allows us to recommend some action. The process_stream() function maintains state across different windows, enabling us to compare metrics between consecutive time frames.
+  It provides recommendations like "Standing recommended" and "Move recommended," based on the counts of 'sit' and 'stand' and the movement distance calculated from the mean values of 'x', 'y', and 'z'.
+  By combining windowed aggregations and stateful computations, our PySpark structured streaming framework offers valuable insights into activity patterns with different times within the streaming data. This framework demonstrates the potential of PySpark in transforming raw, continuous data streams into actionable intelligence, making it an important element in the big data analytics field.
+  It is extremely applicable to the wearable technology industry, providing the user with real-time analytics and important health reminders based on their behaviors. By analyzing data from wearable devices like fitness trackers, the framework can monitor physical activities (like walking, running, sitting, standing) in real time. It can provide immediate feedback to users, encouraging more active lifestyles.
 
 ## How to Use
 

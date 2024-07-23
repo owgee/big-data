@@ -71,4 +71,4 @@ for i in range(len(result_df) - 1):
         if distance_1 < distance_2:
             print("Move recommended")
 
-#spark.stop()
+spark.stop()
